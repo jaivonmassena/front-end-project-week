@@ -23,16 +23,22 @@
  display: flex;
  flex-direction: column;
 }
+
 .Sidebar h1{
   text-align: left;
+  margin-left: 5px;
 }
+
 button{
   height:40px;
-  width:250px;
+  width:230px;
   background-color:#2AC0C4;
   border:1px solid gray;
   margin-top: 20px;
   align-self: center;
+  cursor: pointer;
+  color:white;
+  font-size: 15px;
 }
 .Result{
   height:100px;
@@ -43,4 +49,24 @@ button{
   justify-content:flex-end;
   align-items:flex-end;
   border: 5px solid black;
+}
+
+.Notes{
+  margin: 30px;
+  width: 80%;
+}
+.Notes h2{
+  text-align: left;
+}
+
+.Card{
+  height: 300px;
+  border: 2px solid #D7D7D7;
+  width: 200px;
+  background-color: white;
+}
+
+.Card h3{
+  text-align: left;
+  border-bottom: 2px solid #D7D7D7;
 }
