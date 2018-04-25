@@ -1,37 +1,34 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import main from './Components/Main';
+import { Route, Link } from 'react-router-dom';
+import List from './Components/List';
+import EditView from './Components/Edit';
+import Sidebar from './Components/Sidebar';
+import NoteView from './Components/Noteview';
+import NewView  from './Components/NewNote';
 
-const Result =() =>{
-  return(<div className="Sidebar">
-          <h1>Lambda <br/> Notes</h1>
 
-          <button>View Your Notes</button>
-          <button> +Create New Notes</button>
 
-  </div>);
-}
-const NoteCard=() =>{
-  return(<div className="Card"> <div><h3>Note Title</h3> <p>Gumbo beet greens corn soko endive gumbo gourd. Parsley shallot courgette tatsoi pea sprouts fava bean collard greens dandelion okra wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini.
 
- </p> </div>  </div>)
-}
-const List =() =>{return (<div className="Notes">
-                <h2>Your Notes:</h2>
-                    <NoteCard />
-</div>);}
+
 
 class App extends Component {
-
-
-
-
+  constructor() {
+    super();
+    this.state = {
+        title: 'Test Title',
+        body: 'Body Content testing'
+    };
+  }
   render() {
     return (
       <div className="App">
-      <Result />
-      <List />
+      <Sidebar />
+      <Route exact path ='/' render={() => <List {...this.state}/>} />
+      <Route path ='/edit' component={EditView} />
+      <Route path ='/NewNote' component={NewView}/>
+      <Route path = '/Note' component={NoteView} />
       </div>
     );
   }
